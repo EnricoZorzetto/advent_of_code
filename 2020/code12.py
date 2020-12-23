@@ -75,7 +75,6 @@ def rotate_waypoint_right(WAYP, val):
 
 
 
-# rotate_right('N', 180)
 
 mydir = 'E'
 for i, (val, dir) in enumerate(zip(VAL, DIR)):
@@ -142,11 +141,5 @@ for i, (val, dir) in enumerate(zip(VAL, DIR)):
     print(dir)
     print(POS2)
 print('(*NEW*) Manhattan distance is = {}'.format(abs(POS2[0]) + abs(POS2[1])))
-
-# val = 270
-
-# WAYP = [-10, 1] # EAST (+)
-##########################
-
 
 
