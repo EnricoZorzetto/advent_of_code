@@ -49,7 +49,8 @@ def update_map(newmap):
 def main():
     # inputfile = 'test_data11.txt'
     inputfile = 'data11.txt'
-    map = read_data(inputfile)
+    map0 = read_data(inputfile)
+
     # PART 1
     newmap = map.copy()
     nsteps = 100
@@ -68,7 +69,30 @@ def main():
     print('part 2: # flashes = {} at step # = {}'.format(cflashes, mystep))
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+    # main()
+
+
+inputfile = 'data11.txt'
+map = read_data(inputfile)
+
+mm = np.tile(map)
+
+# PART 1
+newmap = map.copy()
+nsteps = 100
+CURRENT_FLASHES = np.zeros(nsteps).astype(int)
+for st in range(nsteps):
+    newmap, CURRENT_FLASHES[st] = update_map(newmap)
+    # print('step # {}: current # of flashes = {}'.format(st + 1, CURRENT_FLASHES[st]))
+print('part 1: # flashes after {} steps = {}'.format(nsteps, np.sum(CURRENT_FLASHES)))
+# PART 2
+newmap = map.copy()
+cflashes = 0; mystep = 0
+while cflashes < np.size(map):
+    mystep += 1
+    newmap, cflashes = update_map(newmap)
+    # print('step # {}: current # of flashes = {}'.format(mystep, cflashes))
+print('part 2: # flashes = {} at step # = {}'.format(cflashes, mystep))
 
 
