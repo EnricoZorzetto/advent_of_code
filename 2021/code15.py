@@ -86,7 +86,7 @@ def compound_mats(cost_mat0):
             for iy in range(ny0):
                 for ix in range(nx0):
                     if cost_mat_i[iy, ix] > 9: cost_mat_i[iy, ix] -= 9
-            cost_mat[i*ny0:(i+1)*ny0, j*ny0:(j+1)*ny0] = cost_mat_i
+            cost_mat[i*ny0:(i+1)*ny0, j*nx0:(j+1)*nx0] = cost_mat_i
     return cost_mat
 
 
