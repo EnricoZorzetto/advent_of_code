@@ -17,7 +17,7 @@ for l in mylist:
         ev[-1].append(int(l))
 
 sums = np.sort([np.sum(np.array(i)) for i in ev])
-print('The largest value is = {}'.format(sums[-1]))
-print('The 3 largest values are = {}; sum = {}'.format(sums[-3:], np.sum(sums[-3:])))
+print('Part 1 :: The largest value is = {}'.format(sums[-1]))
+print('Part 2 :: The 3 largest values are = {}; sum = {}'.format(sums[-3:], np.sum(sums[-3:])))
 
 
